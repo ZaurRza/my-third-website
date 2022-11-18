@@ -1,0 +1,2565 @@
+объект-набор свойств
+объект=
+{ключ:значение,ключ:значение}
+вложенный объект=
+{значение:{значение:ключ}}
+массив,функция,число,строка - объект
+console.log('hello world')
+console-объект
+.-точечная запись
+log-метод
+()-вызов метода
+'hello world'-значение типа"string"
+метод-одна из свой
+console.dir()-отображает все свойства объекта
+console.table()-отображает все свойтсва объекта в табличном значении
+выражение возвращают значение
+выражение с побочными действиями не только возвращает значение, но и выполняют другие действия
+a=5-выражение которое вернуло значения 5, но и вместе с этим выполнило какое то действие, то есть обозначило а как 5, в дальнейшим а можно использовать в значении 5 
+переменные дают возможность повторного доступа к значениям
+PascalCase-PS-типы и классы
+DB_PASSWORD-значения которые не меняются и известны до запуска/константы
+camelCase-cC-все остальное
+let-объявление переменной (можно менять)-> let a
+const-объявление и присваивание переменной(нельзя менять)-> const a=10
+"="-присвоение-> a=10 
+тип переменной определяется типом присвоенного значения
+const a=10 - число(number)
+const b='abc'- строка(string) можно использовать"abc"
+типы значений (примитивные)
+string(строка)
+boolean(логический)- два значения (true/false)
+number(число)
+null- нет значения у переменной в данный момент(вручную)
+underfined-нет значения
+symbol(символ)-уникальные значения
+тип значения (ссылочный)
+object(объект)
+ссылочный объект-ссылается на объект с помощью переменной (это как подключится к аккаунту с разых устройств, изменение данных отобразится и на других телефонах)
+ссылочный объект можно менять, добавлять новые значения.
+const objectA = {
+    a:10,
+    b:true
+  }
+  const copyOfA = objectA
+  copyOfA.a = 20
+  copyOfA.c = 'да'
+  console.log(objectA)
+()-вызов функции
+джаваскрипт- динамическая типизация 
+function a() {
+console.log('chlen')
+}
+a() получается chlen
+а=10
+а() получается  TypeError
+чтобы не путаться используем const 
+const a =()=>{
+console.log('sas')
+}
+а() получаем sas
+а=10 получаем typeerror
+получение значений
+const myLudi = {
+    Timur: "umniy",
+    Vadim: "alkash",
+    Yarik: "lox",
+  };
+  console.log(myLudi.Vadim)
+объекы можно менять и добавлять значения через точечную запись-
+myLudi.Yarik = 'nelox'
+myLudi.Vanya = 'Java'
+myLudi.Amir = 'chmonya'
+  Timur: 'umniy',
+  Vadim: 'alkash',
+  Yarik: 'nelox',
+  Vanya: 'Java',
+  Amir: 'chmonya'
+const не меняет ссылку
+скобочная запись
+myLudi['chel']= 'debil'
+const cheliks = 'chel'
+myLudi [cheliks]= 'debil'
+
+const myLudi = {
+    Timur: "umniy",
+    Vadim: "alkash",
+    Yarik: "lox",
+    loxi:{
+        Lera: 'loshok',
+        Maksim:'megaloshok' <------ вложенный объект
+    }
+  };
+  myLudi.Yarik = 'nelox'
+  myLudi.Vanya = 'Java'
+  myLudi.Amir = 'chmonya'
+delete myLudi.loxi.Lera
+  console.log(myLudi)
+сокращенная запись 
+
+const zaur= 16
+const timur=17
+const chikibriki= 'damki'
+const vozrast={
+    zaur,
+    timur,
+    chikibriki
+}
+console.log(vozrast)
+
+глобальные объекты
+window-веб браузеры
+global-node.js
+
+метод- свойство объекта значения которого функция
+()-вызов функции
+home:'net' <--свойства
+aboba:function(){
+        console.log('cringe') <--метод
+    }
+
+const mydom={
+    home:'net',
+    aboba:function(){
+        console.log('cringe')
+    }
+}
+mydom.aboba()
+
+можно сокращать
+
+const mydom={
+    home:'net',
+    aboba(){
+        console.log('cringe')
+    }
+}
+mydom.aboba()
+json-формат обмена данными пишется через "
+{
+    "userid":1,
+    "id":1,
+    "title":"Test title",
+    "status":{
+        "completed": false
+    }
+}
+JSON.parse()- превращает json в java
+JSON.stringify()- превращает java в json
+мутирование копий
+если копировать объект, а потом менять копию , то и основный объект тоже меняется 
+как избежать мутаций
+
+1 способ
+через Object.assign({},)-создает новые объекты
+
+const kakish = {
+    nasral: 'amir'
+}
+const kucha = Object.assign({},kakish )
+kucha.obdrist =  'zaur'
+console.log (kucha)
+console.log(kakish)
+НО!!!!!!
+вложенные объекты изменяются
+
+способ 2
+через {...   }- оператор разделения объектов на свойства
+const kakish = {
+    nasral: 'amir'
+}
+const kucha = {... kakish}
+kucha.obdrist =  'zaur'
+console.log (kucha)
+console.log(kakish)
+НО!!!!!!
+вложенные объекты изменяются
+
+способ 3
+JSON.parse(JSON.stringify(  ))
+
+const kakish = {
+    nasral: 'amir',
+    givno:{
+        drist:'ashot'
+    }
+}
+const kucha = JSON.parse(JSON.stringify(kakish))
+kucha.obdrist =  'zaur'
+kucha.givno.drist = 'kamapulya'
+console.log (kucha)
+console.log(kakish)
+
+
+
+ПРОСТО ФИГНЯ
+const daun={
+    debil:'Timur'
+}
+const kakish = {
+    nasral: 'amir',
+    givno:{
+        drist:'ashot',
+    daun
+    }
+}
+const kucha = JSON.parse(JSON.stringify(kakish))
+kucha.obdrist =  'zaur'
+kucha.givno.drist = 'kamapulya'
+console.log (kucha)
+console.log(kakish)
+
+
+функция- блок кода который можно выполнять много раз
+
+let a = 9
+let b =10
+let v= 30
+let p=18
+function abc(a,b,p,v){
+    const c=a+b*p/v
+    console.log(c)
+}
+abc(a,b,p,v)
+ a = 37
+ b =147
+ v= 39
+ p=10
+abc(a,b,p,v)
+
+
+функция может быть:
+
+именнованной
+
+присвоена переменной
+
+аноноимной
+
+значением свойста (метода) объекта
+
+функция- объект
+function abc(a,b,p,v)-параметры функции
+abc(a,b,p,v)- аргументы функции
+самая короткая функция   function abc(){}
+внутри функции не рекомендуется мутировать внешние объекты
+
+const lox={
+    age:15
+}
+function imya(chelik){
+    const amir= {...chelik}
+    amir.age +=1
+    return amir
+}
+const amir= imya (lox)
+console.log(lox)
+console.log(amir)
+
+
+
+
+const lox={
+    age:15
+}
+function imya(chelik){
+    const amir= {...chelik}
+    amir.fty='s'
+    amir.fty +=amir.fty='h'
+    return amir
+}
+const amir= imya (lox)
+console.log(lox)
+console.log(amir)
+
+
+колбек функции-функции которые вызываются внутри других функции
+setTimeout- вызывает функцию через определенное время в милисек
+
+function Yarik(){
+    console.log('Timur')
+}
+setTimeout(Yarik, 10000)
+
+правила работы с функциями 
+1.называть функции исходя из выполняемых задач
+2.одна функция должна выполнять одну задачу 
+3.Не рекомендуется изменять внешние относительно функции переменные
+
+
+Области видимости - определяет границы действия переменной
+
+цепочка видимости
+
+const b =10
+function chel(){
+    function nik(){
+        console.log(b)
+    }
+nik()
+}
+chel()
+
+жизненный цикл переменной
+
+let a
+    function mr() {
+        let a
+        a=true
+        console.log(a)
+    }
+    mr()
+console.log(a)
+
+типы областей видимости 
+глобальная область видимости
+область видимости функции
+область видимости блока
+блок-{между этими скобками}
+
+правила работы с переменными 
+1.Все перемнные объявлять перед использованием
+2.Стараться использовать const везде где это возможно
+3.Внутри функции не изменять переменные с внешних областей видимости
+
+'use strict' - строгий режим
+
+
+Оператор- это встроенная функция
+арифметические (+ - * /)
+сравненмя (=== <-равно !== <--не равно <= >=)
+логические (! && ||) 
+присваивание (=)
+
+текстовые операторы
+type of
+new
+instanceof
+delete
+оператор ,
+= - два операнда
+а=10
+а- 1 операнд
+10 - 2 операнд
+унарные операторы 
+у них один операнд
+бинарные операторы
+у них два операнда
+
+инфиксная запись
+оператр между операндами 
+10+1
+
+префиксная запись
+оператор перед операндами 
+delete obj.a
+
+постфиксная запись
+оператор после операнда
+my()
+
+логические операторы
+!-не - всегда возвращает значение типа boolean(true\false)
+&&-и -возвращают значение одного из операндов
+||-или -возвращают значение одного из операндов
+
+ложные значения дают false
+boolean(value) -> false 
+false
+0
+''
+undefined
+null
+
+Оператор ! чаще всего используется в условных инструкциях
+!10 - false
+!0 - true
+!'abc' false
+!''- true
+!true - false
+!!true - true
+!! -позволяет проверить ложность значения
+
+операторы && и || являются операторами короткого замыкания
+a && b && c && d - ищет первое ложное выражение
+a||b||c||d -ищет первое правдивое выражение 
+
+оператор ...
+объеденение и дополнение с помощью оператора...
+
+const drugie={
+    yarik:15,
+    vanya:15
+}
+const goda={
+    amir:15,
+    zaur:16,
+    maks:16,
+    timur:17
+}
+const godadop={
+    ...goda,
+    lera:14
+}
+const vsegoda={
+    ...godadop,
+    ...goda,
+    ...drugie
+}
+console.table(vsegoda)
+
+если уже есть такое свойство то его значение будет перезаписано
+
+конкатенация строк (соединение строк) оператор +
+'Zaur '+'Rzaev'
+'Zaur Rzaev'
+шаблонные строки 
+const hello='Hello'
+const world='World'
+const greeting= `${hello} ${world}`
+
+
+
+функциональные выражения всегда анонимные 
+function() {
+        let a
+        a=true
+        console.log(a)
+    }
+функциональные выражения нельзя использовать где угодно
+setTimeout(function(){
+    console.log('xui')
+}, 5000)
+стрелочные функции-нет имени и function
+стрелочные функции-выражение, всегда анонимны
+
+setTimeout(()=>{
+    console.log('xui')
+}, 5000)
+
+сокращение стрелочных функций
+
+если только один параметр
+a=>{   }
+если только одно выражения (результат автоматически возвращается)
+(a,b)=>a+b
+
+
+значение параметров функции по умалчанию
+function b(chislo, znach=9){
+    chislo*znach
+    console.log(chislo*znach)
+    return
+}
+b(10)
+
+setTimeout( (chislo, znach=9)=>{
+    chislo*znach
+    chislo=10
+    console.log(chislo*znach)
+    return
+}, 2000)
+
+
+c явным возвратом
+
+const  mypost=(post,time= Date())=>{
+    const aboba= {...post, time}
+    return aboba
+}
+
+const moypost={
+    nickname:'Zaur',
+    id:1,
+    Comment:'май осом пейдж'
+}
+    
+mypost(moypost)
+console.table(mypost(moypost))
+
+с неявным возвратом
+
+const  mypost=(post,time= Date())=>({
+    ...post,
+    time
+})
+
+const moypost={
+    nickname:'Zaur',
+    id:1,
+    Comment:'май осом пейдж'
+}
+    
+mypost(moypost)
+console.table(mypost(moypost))
+
+
+обработка ошибок
+
+const oshibka=()=>{
+    throw new Error('ya daun')
+}
+oshibka()
+console.log('zachem') 
+
+throw new Error - создает ошибку
+
+try{
+блок кода
+ }catch(error){
+если найдена ошибка в try 
+}
+
+const oshibka=()=>{
+    throw new Error('ya daun')
+}
+try{
+    oshibka()
+}catch(error){
+    console.error(error)
+}
+console.log('zachem')
+
+инструкции
+
+выражения - возвращает значение
+инструкция - выполняет действие
+выражения -инструкци
+
+
+инструкци:
+let a;
+
+const b = 5;
+
+if (a>b) { 
+console.log('chert');
+}
+
+for (let a=0; a++; a<5){
+console.log(a);
+}
+интрукция обычно заканчивается ;
+; не обязательно
+
+выражения-инструкция
+a=a+3;
+'abc';
+d='zaur ' + 'rzaev';
+myfn(c,d);
+console.log('chel');
+
+инструкция не может быть выражением
+
+выражения могут использоваться как аргументы в вызовах функций
+
+выражения от инструкций можно отличить благодаря функциям
+
+работает
+
+function a(v){
+    console.log(v)
+}
+let b=10
+let c=3
+a(J=b+c)
+
+не работает
+
+function a(v){
+    console.log(v)
+}
+let b=10
+let c=3
+a(J=b+c;)
+
+
+массивы - это бобъекты с цифровыми именами свойств
+1 способ
+const massiv=[1,'socks',134]
+console.log(massiv)
+
+2 способ 
+const massiv= new Array(1,2,3)
+console.log(massiv)
+
+const massiv=[1,'socks',134]
+const massiv2=massiv
+massiv===massiv2
+console.log(massiv[0,2])
+console.log(massiv===massiv2)
+
+порядок элементов в массиве важен
+
+добавление элементов в массив
+
+const massiv=[1,'socks',134]
+massiv [2]= 38383
+massiv [3]= 'hfck'
+console.log(massiv)
+console.log(massiv.length)
+
+функции высшего порядка в массивах
+основные 
+push:
+добавляет новый элемент в конец массива
+
+const massiv=[1,'socks',134]
+massiv.push('stonks')
+console.log(massiv)
+console.log(massiv.length)
+
+pop:
+удаляет последний элемент в массиве(может возвращать значение удаленного элемента)
+
+const massiv=[1,'socks',134,'kot']
+massiv.pop()
+const remov=massiv.pop()
+console.log(massiv)
+console.log(remov)
+console.log(massiv.length)
+
+unshift:
+добавляет элемент в начале массива
+
+const massiv=[1,'socks',134,'kot']
+massiv.unshift('kakish')
+massiv.unshift('pipi')
+console.log(massiv)
+console.log(massiv.length)
+
+shift:
+удаляет элемент в начале массива(может возвращать значение удаленного элемента)
+
+const massiv=[1,'socks',134,'kot']
+massiv.shift()
+const remove=massiv.shift()
+console.log(massiv)
+console.log(remove)
+console.log(massiv.length)
+
+forEach:
+дает возможность сделать колбек функцию и перебирает все значения массива и использует в этой функции(не меняет основной массив и не создает новый)
+
+const massiv=[1,'socks',134,'kot']
+massiv.forEach((el)=>console.log(el+' hren'))
+console.log(massiv)
+console.log(massiv.length)
+
+map:
+дает возможность сделать колбек функцию и перебирает все значения массива и использует в этой функции(создает новый массив)
+
+
+const massiv=[1,'socks',134,'kot']
+const massiv2 =massiv.map((el)=>{
+    return el+123
+})
+console.log(massiv2)
+console.log(massiv)
+console.log(massiv.length)
+
+деструктуризация
+можно сразу создать и давать значение переменной
+
+объекты
+
+const chel={
+    name:'amir',
+    age:15,
+    IQ:1
+}
+const {name, age, IQ}= chel
+console.log(name,age,IQ)
+
+массивы
+
+const ludi=['zaur','amir','timur']
+const [anon1,anon2,anon3]=ludi
+console.log(anon1,anon2,anon3)
+
+функции
+
+const comments={
+    nik:'zaur',
+    like:0,
+    dislike:19,
+}
+const user=({nik,like,dislike})=>{
+    if ( !dislike&& !like) {
+        return `${nik} have no dislike and no like`
+    } 
+    return `${nik} have ${dislike} dislike and ${like} like`
+}
+user(comments)
+console.log(user(comments))
+
+
+условные инструкции
+if
+if...else
+switch
+тернарный оператор- выражение
+
+
+IF
+if(условие){
+блок кода, выполняемый однократно, если условие правдиво
+}
+
+let a=12
+if (a>10) {
+    a=a+25
+}
+console.log(a)
+
+
+const profil={
+    age:11,
+    name:''
+}
+if (!profil.name){
+    console.log('noname')
+}
+
+
+if...else
+
+if(условие){
+выполняется один раз если условие правдиво
+}else{
+выполняется один раз если условие ложно
+}
+
+const profil={
+    age:11,
+    name:'ZAUR '
+}
+if (!profil.name){
+    console.log('noname')
+} else{console.log(profil.name)}
+
+
+if else if 
+
+if(1условие){
+выполняется один раз если 1условие правдиво
+}else if(2условие){
+выполняется один раз если 2условие правдиво
+}else{
+выполняется один раз если предыдущие условия ложны
+}
+
+const amir=15
+if (amir >20){
+    console.log('mnogo IQ')
+}else if(amir >15){
+    console.log('ne och mnogo mozgov')
+}else{
+    console.log('doter')
+}
+
+
+
+if в функциях
+
+const imya={
+    zaur:15,
+    amir:16
+}
+const v=({zaur,amir})=>{
+    if (zaur<amir) {
+        console.log('he is small')
+    }
+    if(zaur>amir){
+        console.log('he is big')
+    }
+}
+v(imya)
+
+
+switch
+
+switch(выражение){
+case A:
+break
+действие если выражение ===А
+case B:
+break
+действие если выражение ===В
+default
+действие по умолчанию
+}
+
+break-выход из условной инструкции
+
+const clas=7
+switch (clas) {
+    case 1:
+        console.log('1A')
+    break
+    case 2:
+        console.log('2A')
+    break
+    case 3:
+        console.log('3A')   
+    break
+    case 4:
+        console.log('4A')
+    break
+    default:
+        console.log('Это не А класс')     
+}
+
+
+тернарный оператор
+у тернарного оператора три операнда
+  конструкция с тернарном оператором- это выражение
+условие ? выражение 1: выражение 2
+    |          
+    |
+выражение
+
+если условие правдиво, тогда возвращается результат выражения 1
+если условие ложно, тогда возвращается результат выражения 2
+
+условие 
+?выражение 1
+:выражение 2
+
+const cifra=10
+!cifra
+?console.log('ne chuchelo')
+:console.log('chuchelo')
+
+
+const cifra1=10
+const cifra2=10
+const bukvi1='lox '
+const bukvi2='srabotalo'
+function fn(){
+    console.log(cifra1*cifra2)
+}
+function fn1(){
+    console.log(bukvi1 +bukvi2)
+}
+cifra1&&!cifra2
+?fn(cifra1,cifra2)
+:fn1(bukvi1,bukvi2)
+
+let cifra=49
+console.log(cifra >=50 ? cifra+100 : cifra*1000)
+
+
+
+let cifra=75
+const b =cifra >=50 ? cifra+100 : cifra+1000
+console.log(b)
+if (b >=1000){
+    console.log('pobeda!')}
+if (b <1000) {
+    console.log('porajenie')
+}
+
+
+
+циклы
+
+типы циклов 
+for
+for...in...
+while
+do...while...
+for...of...
+
+
+FOR
+выполняет действие пока условие правдиво
+
+for(начальная инструкция; условие; интерационное действие){
+блок кода, выполняемый на каждой интерации
+}
+
+for (let a=0; a<10; a+=2){
+    console.log(a)
+}
+
+для массивов
+
+const massiv=[1,'socks',134,'kot']
+for (let b=0; b<massiv.length; b++){
+console.log(massiv[b])
+}
+console.log(massiv)
+console.log(massiv.length)
+
+РЕКОМЕНДУЕМЫЙ ПОДХОД
+
+const massiv=[1,'socks',134,'kot']
+massiv.forEach((el,nom)=>{console.log(el,nom)})
+console.log(massiv)
+console.log(massiv.length)
+
+
+цикл while - выполняет пока условие правдиво
+while(условие){
+блок кода, выполняемый на каждой интерации
+}
+
+
+let a=0
+while (a<10){
+    console.log(a)
+    a++
+}
+
+do while - выполняет пока условие правдиво(выполнится хотябы один раз)
+
+do{
+блок кода, выполняемый на каждой интерации
+}while(условие)
+
+let a=0
+do{
+    console.log(a)
+    a++
+}while(a>1)
+
+for in для объектов  
+
+for(key in object){
+действия с каждым свойствм объекта
+значения свойства objetc[key]
+}
+
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+for(const jopa in obj){
+    console.log(jopa,obj[jopa])
+}
+
+forEach
+Object.keys(obj)-получение всех ключей объекта в виде массива
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+Object.keys(obj).forEach(jopa=>{
+    console.log(jopa,obj[jopa])
+})
+
+Object.values(obj)-получение всех значений объекта в виде массива
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+Object.values(obj).forEach(sd=>{
+    console.log(sd)
+})
+
+Object.keys(obj)-переделывает элементы в массив(ключи)
+[zaur,amir,timur]
+Object.values(obj)-переделывает элементы в массив(свойства)
+[16,15,17]
+
+
+for in для массивов
+не рекомендуется
+
+FOR OF
+
+for (Element of Iterable){
+действие с определенным элементом
+}
+
+Iterable- любое значение или переменное которое можно перебирать
+
+const a='265337'
+for (const numbers of a){
+    console.log(numbers)
+} 
+
+
+numbers-каждый символ в строке
+
+FOR OF не для объектов!!!!
+
+
+МОДУЛИ 
+модули позволяет структурировать код
+модули позволяет избегать дублирование кода
+
+export/import
+export... -экспорт переменных
+import... -импорт переменных
+
+экспорт по умолчанию-имена могут не совпадать
+
+1 modul 
+const name = () => {
+  console.log("zaur");
+};
+export default name;
+
+2 modul
+
+import name from "./const myLudi = {.mjs";
+name();
+
+
+
+Несколько переменных -имена должны совпадать
+
+1 modul
+
+const zaur = 16;
+const amir = 15;
+const yarik = 15;
+export { zaur, amir, yarik };
+
+2 modul
+
+import { zaur, amir, yarik } from "./const myLudi = {.mjs";
+console.log(zaur);
+
+можно переиминовать переменные
+
+1 modul
+
+const zaur = 16;
+const amir = 15;
+const yarik = 15;
+export { zaur, amir, yarik };
+
+2 modul
+
+import { zaur as drugoe, amir, yarik } from "./const myLudi = {.mjs";
+console.log(drugoe);
+
+правила работы с модулями 
+1.Модули должны быть одноцелевыми
+2.Распологайте все export инструкции внизу файла
+3.Располагайте все import инструкции сверху файла
+4.По возможности используйте export default
+
+1 modul
+
+const imens = {
+  zaur: 16,
+  amir: {
+    rod: "chelovek",
+    rasa: "churka",
+  },
+  timur: "ludi",
+};
+function kirieshka() {
+  console.log("datum");
+}
+export { imens, kirieshka };
+
+2 modul
+
+import { imens, kirieshka } from "./const myLudi = {.mjs";
+console.log(imens);
+kirieshka();
+
+
+КЛАССЫ И ПРОТОТИПЫ
+
+class... классы позволяют создавать прототипы для объектов
+на основе прототипов создаются экземпляры
+экземпляры имеют свои собственные свойста и методы
+экземпляры наследуют свойства и методы прототипов
+класс
+
+this- указывает на экземпляр класса
+
+class Comment{
+construtor(text){
+this.text=text
+this.votes=0
+}
+upvote(){
+this.votes+=1
+}
+}
+
+конструктор вызывается только тогда когдасоздает новый экземпляр 
+
+
+class name{
+
+блок кода работает только в этом классе
+и не наследуется другими классами т.е
+можно использовать только внутри этого класса
+в остальных работать не будет
+
+}
+
+
+создание экземпляров
+вызывается функция construcor - new
+const firstcom=new Comment ('first comment')
+
+наследование по цепочке
+цепочка прототипов
+firstcom-->Comment-->Object
+
+проверка принадлежности классов
+instanceof-проверка на принадлежность
+
+const firstcom = new Comment("first comment");
+console.table(firstcom instanceof Comment);
+
+вызов метода
+
+class Comment {
+  constructor(text) {
+    this.text = text
+    this.votes = 0
+  }
+  upvote() {
+    this.votes += 1
+  }
+}
+const firstcom = new Comment()
+firstcom.upvote()
+console.log(firstcom.votes)
+
+методы можно вызывать много раз
+
+проверка принадлежности свойст экземпляру объекта
+firstcom.hasOwnProperty('text')-true
+firstcom.hasOwnProperty('upvote')-false
+
+создание нескольких экземпляров
+разные объекты с разными свойствами 
+const firstcom = new Comment("first comment")
+const 2com = new Comment("no comment")
+const 3com = new Comment("new comment")
+
+статические метод
+
+class Comment {
+    con() {
+      this.text = text;
+      this.vote = 1;
+    }
+    upvote(){
+      this.vote+=1;
+    }
+    static mer(first,second){
+        return `${first} ${second}`
+    }
+  }
+
+Расширение других классов
+
+class Num extends Array{
+    sum(){
+        return this.reduce((el,acc)=>acc+=el,0)
+    }
+}
+const me=new Num (2,3,7)
+me.sum()
+console.log(me)
+
+Прототип
+
+строки и числа ведут себя как объекты 
+
+Промисы
+позволяют обработать отложенные во времени события
+промис-это обещание предоставить результат позже
+может вернуть ошибку если результат предоставить невозможно
+
+Состояние промиса
+
+1.ожидание 
+
+2.исполнен
+
+3.отклонен
+
+Создание промиса
+const jdi=new Promise((resolve, reject)=>{
+выполнение 
+внутри этой функции нужно в результате вызвать одну из функций resolve или reject
+
+
+Получение результатов промиса
+jdi
+.then((value)=>{
+действие в случае успешного исполнения Промиса (value значение-resolve)
+})
+.catch((error)=>{
+действие в случае отклонения Промиса(error значение-reject)
+})
+
+fetch
+});
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then((response) =>{
+    console.log(response)
+    return response.json()
+
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) =>{
+    console.log(response)
+    return response.json()
+  })
+  .then((json) => console.log(json))
+  .catch((error)=>console.error(error))
+  })
+
+const Data=(https)=>
+new Promise((res,rej)=>
+fetch(https)
+.then(response=>response.json())
+.then(json=>res(json))
+.catch(error=>rej(error))
+)
+Data('https://jsonplaceholder.typicode.com/posts/1')
+.then(gotovo=>console.log(gotovo))
+.catch(obosrish=>console.log(obosrish))
+
+
+ASYNC/AWAIT
+ASYNC/AWAIT-специальный синтаксис для упрощения работы с промисами
+
+async function asy(){
+всегда возвращает промис
+}
+const asy= async()=>{
+всегда возвращает промис
+}
+
+
+const asy=async()=>{
+    return'govno'
+}
+asy()
+.then(gotovo=>console.log(gotovo))
+
+const asy=async()=>{
+   throw new Error('oshibka')
+}
+asy()
+.then(gotovo=>console.log(gotovo))
+.catch(error=>console.log(error))
+
+
+
+
+AWAIT
+
+const asy=async()=>{
+   await
+}
+asy()
+
+const timer=()=>
+new Promise((gotovo,negotovo)=>
+setTimeout(()=>gotovo(),2000))
+const asy= async()=>{
+    console.log('start')
+    await timer()
+    console.log('end')
+}
+asy()
+
+perfomance.now()-отслеживает время
+
+главное в ASYNC/AWAIT
+1.ASYNC/AWAIT - это синтаксическая настройка над промисами
+2.AWAIT синтаксис возможен только внутри ASYNC функций
+3.ASYNC функция всегда возвращает Promyse
+4.ASYNC функция ожидает результата инструкции AWAIT и не выполняет последущие инструкцииобъект-набор свойств
+объект=
+{ключ:значение,ключ:значение}
+вложенный объект=
+{значение:{значение:ключ}}
+массив,функция,число,строка - объект
+console.log('hello world')
+console-объект
+.-точечная запись
+log-метод
+()-вызов метода
+'hello world'-значение типа"string"
+метод-одна из свой
+console.dir()-отображает все свойства объекта
+console.table()-отображает все свойтсва объекта в табличном значении
+выражение возвращают значение
+выражение с побочными действиями не только возвращает значение, но и выполняют другие действия
+a=5-выражение которое вернуло значения 5, но и вместе с этим выполнило какое то действие, то есть обозначило а как 5, в дальнейшим а можно использовать в значении 5 
+переменные дают возможность повторного доступа к значениям
+PascalCase-PS-типы и классы
+DB_PASSWORD-значения которые не меняются и известны до запуска/константы
+camelCase-cC-все остальное
+let-объявление переменной (можно менять)-> let a
+const-объявление и присваивание переменной(нельзя менять)-> const a=10
+"="-присвоение-> a=10 
+тип переменной определяется типом присвоенного значения
+const a=10 - число(number)
+const b='abc'- строка(string) можно использовать"abc"
+типы значений (примитивные)
+string(строка)
+boolean(логический)- два значения (true/false)
+number(число)
+null- нет значения у переменной в данный момент(вручную)
+underfined-нет значения
+symbol(символ)-уникальные значения
+тип значения (ссылочный)
+object(объект)
+ссылочный объект-ссылается на объект с помощью переменной (это как подключится к аккаунту с разых устройств, изменение данных отобразится и на других телефонах)
+ссылочный объект можно менять, добавлять новые значения.
+const objectA = {
+    a:10,
+    b:true
+  }
+  const copyOfA = objectA
+  copyOfA.a = 20
+  copyOfA.c = 'да'
+  console.log(objectA)
+()-вызов функции
+джаваскрипт- динамическая типизация 
+function a() {
+console.log('chlen')
+}
+a() получается chlen
+а=10
+а() получается  TypeError
+чтобы не путаться используем const 
+const a =()=>{
+console.log('sas')
+}
+а() получаем sas
+а=10 получаем typeerror
+получение значений
+const myLudi = {
+    Timur: "umniy",
+    Vadim: "alkash",
+    Yarik: "lox",
+  };
+  console.log(myLudi.Vadim)
+объекы можно менять и добавлять значения через точечную запись-
+myLudi.Yarik = 'nelox'
+myLudi.Vanya = 'Java'
+myLudi.Amir = 'chmonya'
+  Timur: 'umniy',
+  Vadim: 'alkash',
+  Yarik: 'nelox',
+  Vanya: 'Java',
+  Amir: 'chmonya'
+const не меняет ссылку
+скобочная запись
+myLudi['chel']= 'debil'
+const cheliks = 'chel'
+myLudi [cheliks]= 'debil'
+
+const myLudi = {
+    Timur: "umniy",
+    Vadim: "alkash",
+    Yarik: "lox",
+    loxi:{
+        Lera: 'loshok',
+        Maksim:'megaloshok' <------ вложенный объект
+    }
+  };
+  myLudi.Yarik = 'nelox'
+  myLudi.Vanya = 'Java'
+  myLudi.Amir = 'chmonya'
+delete myLudi.loxi.Lera
+  console.log(myLudi)
+сокращенная запись 
+
+const zaur= 16
+const timur=17
+const chikibriki= 'damki'
+const vozrast={
+    zaur,
+    timur,
+    chikibriki
+}
+console.log(vozrast)
+
+глобальные объекты
+window-веб браузеры
+global-node.js
+
+метод- свойство объекта значения которого функция
+()-вызов функции
+home:'net' <--свойства
+aboba:function(){
+        console.log('cringe') <--метод
+    }
+
+const mydom={
+    home:'net',
+    aboba:function(){
+        console.log('cringe')
+    }
+}
+mydom.aboba()
+
+можно сокращать
+
+const mydom={
+    home:'net',
+    aboba(){
+        console.log('cringe')
+    }
+}
+mydom.aboba()
+json-формат обмена данными пишется через "
+{
+    "userid":1,
+    "id":1,
+    "title":"Test title",
+    "status":{
+        "completed": false
+    }
+}
+JSON.parse()- превращает json в java
+JSON.stringify()- превращает java в json
+мутирование копий
+если копировать объект, а потом менять копию , то и основный объект тоже меняется 
+как избежать мутаций
+
+1 способ
+через Object.assign({},)-создает новые объекты
+
+const kakish = {
+    nasral: 'amir'
+}
+const kucha = Object.assign({},kakish )
+kucha.obdrist =  'zaur'
+console.log (kucha)
+console.log(kakish)
+НО!!!!!!
+вложенные объекты изменяются
+
+способ 2
+через {...   }- оператор разделения объектов на свойства
+const kakish = {
+    nasral: 'amir'
+}
+const kucha = {... kakish}
+kucha.obdrist =  'zaur'
+console.log (kucha)
+console.log(kakish)
+НО!!!!!!
+вложенные объекты изменяются
+
+способ 3
+JSON.parse(JSON.stringify(  ))
+
+const kakish = {
+    nasral: 'amir',
+    givno:{
+        drist:'ashot'
+    }
+}
+const kucha = JSON.parse(JSON.stringify(kakish))
+kucha.obdrist =  'zaur'
+kucha.givno.drist = 'kamapulya'
+console.log (kucha)
+console.log(kakish)
+
+
+
+ПРОСТО ФИГНЯ
+const daun={
+    debil:'Timur'
+}
+const kakish = {
+    nasral: 'amir',
+    givno:{
+        drist:'ashot',
+    daun
+    }
+}
+const kucha = JSON.parse(JSON.stringify(kakish))
+kucha.obdrist =  'zaur'
+kucha.givno.drist = 'kamapulya'
+console.log (kucha)
+console.log(kakish)
+
+
+функция- блок кода который можно выполнять много раз
+
+let a = 9
+let b =10
+let v= 30
+let p=18
+function abc(a,b,p,v){
+    const c=a+b*p/v
+    console.log(c)
+}
+abc(a,b,p,v)
+ a = 37
+ b =147
+ v= 39
+ p=10
+abc(a,b,p,v)
+
+
+функция может быть:
+
+именнованной
+
+присвоена переменной
+
+аноноимной
+
+значением свойста (метода) объекта
+
+функция- объект
+function abc(a,b,p,v)-параметры функции
+abc(a,b,p,v)- аргументы функции
+самая короткая функция   function abc(){}
+внутри функции не рекомендуется мутировать внешние объекты
+
+const lox={
+    age:15
+}
+function imya(chelik){
+    const amir= {...chelik}
+    amir.age +=1
+    return amir
+}
+const amir= imya (lox)
+console.log(lox)
+console.log(amir)
+
+
+
+
+const lox={
+    age:15
+}
+function imya(chelik){
+    const amir= {...chelik}
+    amir.fty='s'
+    amir.fty +=amir.fty='h'
+    return amir
+}
+const amir= imya (lox)
+console.log(lox)
+console.log(amir)
+
+
+колбек функции-функции которые вызываются внутри других функции
+setTimeout- вызывает функцию через определенное время в милисек
+
+function Yarik(){
+    console.log('Timur')
+}
+setTimeout(Yarik, 10000)
+
+правила работы с функциями 
+1.называть функции исходя из выполняемых задач
+2.одна функция должна выполнять одну задачу 
+3.Не рекомендуется изменять внешние относительно функции переменные
+
+
+Области видимости - определяет границы действия переменной
+
+цепочка видимости
+
+const b =10
+function chel(){
+    function nik(){
+        console.log(b)
+    }
+nik()
+}
+chel()
+
+жизненный цикл переменной
+
+let a
+    function mr() {
+        let a
+        a=true
+        console.log(a)
+    }
+    mr()
+console.log(a)
+
+типы областей видимости 
+глобальная область видимости
+область видимости функции
+область видимости блока
+блок-{между этими скобками}
+
+правила работы с переменными 
+1.Все перемнные объявлять перед использованием
+2.Стараться использовать const везде где это возможно
+3.Внутри функции не изменять переменные с внешних областей видимости
+
+'use strict' - строгий режим
+
+
+Оператор- это встроенная функция
+арифметические (+ - * /)
+сравненмя (=== <-равно !== <--не равно <= >=)
+логические (! && ||) 
+присваивание (=)
+
+текстовые операторы
+type of
+new
+instanceof
+delete
+оператор ,
+= - два операнда
+а=10
+а- 1 операнд
+10 - 2 операнд
+унарные операторы 
+у них один операнд
+бинарные операторы
+у них два операнда
+
+инфиксная запись
+оператр между операндами 
+10+1
+
+префиксная запись
+оператор перед операндами 
+delete obj.a
+
+постфиксная запись
+оператор после операнда
+my()
+
+логические операторы
+!-не - всегда возвращает значение типа boolean(true\false)
+&&-и -возвращают значение одного из операндов
+||-или -возвращают значение одного из операндов
+
+ложные значения дают false
+boolean(value) -> false 
+false
+0
+''
+undefined
+null
+
+Оператор ! чаще всего используется в условных инструкциях
+!10 - false
+!0 - true
+!'abc' false
+!''- true
+!true - false
+!!true - true
+!! -позволяет проверить ложность значения
+
+операторы && и || являются операторами короткого замыкания
+a && b && c && d - ищет первое ложное выражение
+a||b||c||d -ищет первое правдивое выражение 
+
+оператор ...
+объеденение и дополнение с помощью оператора...
+
+const drugie={
+    yarik:15,
+    vanya:15
+}
+const goda={
+    amir:15,
+    zaur:16,
+    maks:16,
+    timur:17
+}
+const godadop={
+    ...goda,
+    lera:14
+}
+const vsegoda={
+    ...godadop,
+    ...goda,
+    ...drugie
+}
+console.table(vsegoda)
+
+если уже есть такое свойство то его значение будет перезаписано
+
+конкатенация строк (соединение строк) оператор +
+'Zaur '+'Rzaev'
+'Zaur Rzaev'
+шаблонные строки 
+const hello='Hello'
+const world='World'
+const greeting= `${hello} ${world}`
+
+
+
+функциональные выражения всегда анонимные 
+function() {
+        let a
+        a=true
+        console.log(a)
+    }
+функциональные выражения нельзя использовать где угодно
+setTimeout(function(){
+    console.log('xui')
+}, 5000)
+стрелочные функции-нет имени и function
+стрелочные функции-выражение, всегда анонимны
+
+setTimeout(()=>{
+    console.log('xui')
+}, 5000)
+
+сокращение стрелочных функций
+
+если только один параметр
+a=>{   }
+если только одно выражения (результат автоматически возвращается)
+(a,b)=>a+b
+
+
+значение параметров функции по умалчанию
+function b(chislo, znach=9){
+    chislo*znach
+    console.log(chislo*znach)
+    return
+}
+b(10)
+
+setTimeout( (chislo, znach=9)=>{
+    chislo*znach
+    chislo=10
+    console.log(chislo*znach)
+    return
+}, 2000)
+
+
+c явным возвратом
+
+const  mypost=(post,time= Date())=>{
+    const aboba= {...post, time}
+    return aboba
+}
+
+const moypost={
+    nickname:'Zaur',
+    id:1,
+    Comment:'май осом пейдж'
+}
+    
+mypost(moypost)
+console.table(mypost(moypost))
+
+с неявным возвратом
+
+const  mypost=(post,time= Date())=>({
+    ...post,
+    time
+})
+
+const moypost={
+    nickname:'Zaur',
+    id:1,
+    Comment:'май осом пейдж'
+}
+    
+mypost(moypost)
+console.table(mypost(moypost))
+
+
+обработка ошибок
+
+const oshibka=()=>{
+    throw new Error('ya daun')
+}
+oshibka()
+console.log('zachem') 
+
+throw new Error - создает ошибку
+
+try{
+блок кода
+ }catch(error){
+если найдена ошибка в try 
+}
+
+const oshibka=()=>{
+    throw new Error('ya daun')
+}
+try{
+    oshibka()
+}catch(error){
+    console.error(error)
+}
+console.log('zachem')
+
+инструкции
+
+выражения - возвращает значение
+инструкция - выполняет действие
+выражения -инструкци
+
+
+инструкци:
+let a;
+
+const b = 5;
+
+if (a>b) { 
+console.log('chert');
+}
+
+for (let a=0; a++; a<5){
+console.log(a);
+}
+интрукция обычно заканчивается ;
+; не обязательно
+
+выражения-инструкция
+a=a+3;
+'abc';
+d='zaur ' + 'rzaev';
+myfn(c,d);
+console.log('chel');
+
+инструкция не может быть выражением
+
+выражения могут использоваться как аргументы в вызовах функций
+
+выражения от инструкций можно отличить благодаря функциям
+
+работает
+
+function a(v){
+    console.log(v)
+}
+let b=10
+let c=3
+a(J=b+c)
+
+не работает
+
+function a(v){
+    console.log(v)
+}
+let b=10
+let c=3
+a(J=b+c;)
+
+
+массивы - это бобъекты с цифровыми именами свойств
+1 способ
+const massiv=[1,'socks',134]
+console.log(massiv)
+
+2 способ 
+const massiv= new Array(1,2,3)
+console.log(massiv)
+
+const massiv=[1,'socks',134]
+const massiv2=massiv
+massiv===massiv2
+console.log(massiv[0,2])
+console.log(massiv===massiv2)
+
+порядок элементов в массиве важен
+
+добавление элементов в массив
+
+const massiv=[1,'socks',134]
+massiv [2]= 38383
+massiv [3]= 'hfck'
+console.log(massiv)
+console.log(massiv.length)
+
+функции высшего порядка в массивах
+основные 
+push:
+добавляет новый элемент в конец массива
+
+const massiv=[1,'socks',134]
+massiv.push('stonks')
+console.log(massiv)
+console.log(massiv.length)
+
+pop:
+удаляет последний элемент в массиве(может возвращать значение удаленного элемента)
+
+const massiv=[1,'socks',134,'kot']
+massiv.pop()
+const remov=massiv.pop()
+console.log(massiv)
+console.log(remov)
+console.log(massiv.length)
+
+unshift:
+добавляет элемент в начале массива
+
+const massiv=[1,'socks',134,'kot']
+massiv.unshift('kakish')
+massiv.unshift('pipi')
+console.log(massiv)
+console.log(massiv.length)
+
+shift:
+удаляет элемент в начале массива(может возвращать значение удаленного элемента)
+
+const massiv=[1,'socks',134,'kot']
+massiv.shift()
+const remove=massiv.shift()
+console.log(massiv)
+console.log(remove)
+console.log(massiv.length)
+
+forEach:
+дает возможность сделать колбек функцию и перебирает все значения массива и использует в этой функции(не меняет основной массив и не создает новый)
+
+const massiv=[1,'socks',134,'kot']
+massiv.forEach((el)=>console.log(el+' hren'))
+console.log(massiv)
+console.log(massiv.length)
+
+map:
+дает возможность сделать колбек функцию и перебирает все значения массива и использует в этой функции(создает новый массив)
+
+
+const massiv=[1,'socks',134,'kot']
+const massiv2 =massiv.map((el)=>{
+    return el+123
+})
+console.log(massiv2)
+console.log(massiv)
+console.log(massiv.length)
+
+деструктуризация
+можно сразу создать и давать значение переменной
+
+объекты
+
+const chel={
+    name:'amir',
+    age:15,
+    IQ:1
+}
+const {name, age, IQ}= chel
+console.log(name,age,IQ)
+
+массивы
+
+const ludi=['zaur','amir','timur']
+const [anon1,anon2,anon3]=ludi
+console.log(anon1,anon2,anon3)
+
+функции
+
+const comments={
+    nik:'zaur',
+    like:0,
+    dislike:19,
+}
+const user=({nik,like,dislike})=>{
+    if ( !dislike&& !like) {
+        return `${nik} have no dislike and no like`
+    } 
+    return `${nik} have ${dislike} dislike and ${like} like`
+}
+user(comments)
+console.log(user(comments))
+
+
+условные инструкции
+if
+if...else
+switch
+тернарный оператор- выражение
+
+
+IF
+if(условие){
+блок кода, выполняемый однократно, если условие правдиво
+}
+
+let a=12
+if (a>10) {
+    a=a+25
+}
+console.log(a)
+
+
+const profil={
+    age:11,
+    name:''
+}
+if (!profil.name){
+    console.log('noname')
+}
+
+
+if...else
+
+if(условие){
+выполняется один раз если условие правдиво
+}else{
+выполняется один раз если условие ложно
+}
+
+const profil={
+    age:11,
+    name:'ZAUR '
+}
+if (!profil.name){
+    console.log('noname')
+} else{console.log(profil.name)}
+
+
+if else if 
+
+if(1условие){
+выполняется один раз если 1условие правдиво
+}else if(2условие){
+выполняется один раз если 2условие правдиво
+}else{
+выполняется один раз если предыдущие условия ложны
+}
+
+const amir=15
+if (amir >20){
+    console.log('mnogo IQ')
+}else if(amir >15){
+    console.log('ne och mnogo mozgov')
+}else{
+    console.log('doter')
+}
+
+
+
+if в функциях
+
+const imya={
+    zaur:15,
+    amir:16
+}
+const v=({zaur,amir})=>{
+    if (zaur<amir) {
+        console.log('he is small')
+    }
+    if(zaur>amir){
+        console.log('he is big')
+    }
+}
+v(imya)
+
+
+switch
+
+switch(выражение){
+case A:
+break
+действие если выражение ===А
+case B:
+break
+действие если выражение ===В
+default
+действие по умолчанию
+}
+
+break-выход из условной инструкции
+
+const clas=7
+switch (clas) {
+    case 1:
+        console.log('1A')
+    break
+    case 2:
+        console.log('2A')
+    break
+    case 3:
+        console.log('3A')   
+    break
+    case 4:
+        console.log('4A')
+    break
+    default:
+        console.log('Это не А класс')     
+}
+
+
+тернарный оператор
+у тернарного оператора три операнда
+  конструкция с тернарном оператором- это выражение
+условие ? выражение 1: выражение 2
+    |          
+    |
+выражение
+
+если условие правдиво, тогда возвращается результат выражения 1
+если условие ложно, тогда возвращается результат выражения 2
+
+условие 
+?выражение 1
+:выражение 2
+
+const cifra=10
+!cifra
+?console.log('ne chuchelo')
+:console.log('chuchelo')
+
+
+const cifra1=10
+const cifra2=10
+const bukvi1='lox '
+const bukvi2='srabotalo'
+function fn(){
+    console.log(cifra1*cifra2)
+}
+function fn1(){
+    console.log(bukvi1 +bukvi2)
+}
+cifra1&&!cifra2
+?fn(cifra1,cifra2)
+:fn1(bukvi1,bukvi2)
+
+let cifra=49
+console.log(cifra >=50 ? cifra+100 : cifra*1000)
+
+
+
+let cifra=75
+const b =cifra >=50 ? cifra+100 : cifra+1000
+console.log(b)
+if (b >=1000){
+    console.log('pobeda!')}
+if (b <1000) {
+    console.log('porajenie')
+}
+
+
+
+циклы
+
+типы циклов 
+for
+for...in...
+while
+do...while...
+for...of...
+
+
+FOR
+выполняет действие пока условие правдиво
+
+for(начальная инструкция; условие; интерационное действие){
+блок кода, выполняемый на каждой интерации
+}
+
+for (let a=0; a<10; a+=2){
+    console.log(a)
+}
+
+для массивов
+
+const massiv=[1,'socks',134,'kot']
+for (let b=0; b<massiv.length; b++){
+console.log(massiv[b])
+}
+console.log(massiv)
+console.log(massiv.length)
+
+РЕКОМЕНДУЕМЫЙ ПОДХОД
+
+const massiv=[1,'socks',134,'kot']
+massiv.forEach((el,nom)=>{console.log(el,nom)})
+console.log(massiv)
+console.log(massiv.length)
+
+
+цикл while - выполняет пока условие правдиво
+while(условие){
+блок кода, выполняемый на каждой интерации
+}
+
+
+let a=0
+while (a<10){
+    console.log(a)
+    a++
+}
+
+do while - выполняет пока условие правдиво(выполнится хотябы один раз)
+
+do{
+блок кода, выполняемый на каждой интерации
+}while(условие)
+
+let a=0
+do{
+    console.log(a)
+    a++
+}while(a>1)
+
+for in для объектов  
+
+for(key in object){
+действия с каждым свойствм объекта
+значения свойства objetc[key]
+}
+
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+for(const jopa in obj){
+    console.log(jopa,obj[jopa])
+}
+
+forEach
+Object.keys(obj)-получение всех ключей объекта в виде массива
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+Object.keys(obj).forEach(jopa=>{
+    console.log(jopa,obj[jopa])
+})
+
+Object.values(obj)-получение всех значений объекта в виде массива
+const obj={
+    zaur:16,
+    amir:15,
+    timur:17
+}
+Object.values(obj).forEach(sd=>{
+    console.log(sd)
+})
+
+Object.keys(obj)-переделывает элементы в массив(ключи)
+[zaur,amir,timur]
+Object.values(obj)-переделывает элементы в массив(свойства)
+[16,15,17]
+
+
+for in для массивов
+не рекомендуется
+
+FOR OF
+
+for (Element of Iterable){
+действие с определенным элементом
+}
+
+Iterable- любое значение или переменное которое можно перебирать
+
+const a='265337'
+for (const numbers of a){
+    console.log(numbers)
+} 
+
+
+numbers-каждый символ в строке
+
+FOR OF не для объектов!!!!
+
+
+МОДУЛИ 
+модули позволяет структурировать код
+модули позволяет избегать дублирование кода
+
+export/import
+export... -экспорт переменных
+import... -импорт переменных
+
+экспорт по умолчанию-имена могут не совпадать
+
+1 modul 
+const name = () => {
+  console.log("zaur");
+};
+export default name;
+
+2 modul
+
+import name from "./const myLudi = {.mjs";
+name();
+
+
+
+Несколько переменных -имена должны совпадать
+
+1 modul
+
+const zaur = 16;
+const amir = 15;
+const yarik = 15;
+export { zaur, amir, yarik };
+
+2 modul
+
+import { zaur, amir, yarik } from "./const myLudi = {.mjs";
+console.log(zaur);
+
+можно переиминовать переменные
+
+1 modul
+
+const zaur = 16;
+const amir = 15;
+const yarik = 15;
+export { zaur, amir, yarik };
+
+2 modul
+
+import { zaur as drugoe, amir, yarik } from "./const myLudi = {.mjs";
+console.log(drugoe);
+
+правила работы с модулями 
+1.Модули должны быть одноцелевыми
+2.Распологайте все export инструкции внизу файла
+3.Располагайте все import инструкции сверху файла
+4.По возможности используйте export default
+
+1 modul
+
+const imens = {
+  zaur: 16,
+  amir: {
+    rod: "chelovek",
+    rasa: "churka",
+  },
+  timur: "ludi",
+};
+function kirieshka() {
+  console.log("datum");
+}
+export { imens, kirieshka };
+
+2 modul
+
+import { imens, kirieshka } from "./const myLudi = {.mjs";
+console.log(imens);
+kirieshka();
+
+
+КЛАССЫ И ПРОТОТИПЫ
+
+class... классы позволяют создавать прототипы для объектов
+на основе прототипов создаются экземпляры
+экземпляры имеют свои собственные свойста и методы
+экземпляры наследуют свойства и методы прототипов
+класс
+
+this- указывает на экземпляр класса
+
+class Comment{
+construtor(text){
+this.text=text
+this.votes=0
+}
+upvote(){
+this.votes+=1
+}
+}
+
+конструктор вызывается только тогда когдасоздает новый экземпляр 
+
+
+class name{
+
+блок кода работает только в этом классе
+и не наследуется другими классами т.е
+можно использовать только внутри этого класса
+в остальных работать не будет
+
+}
+
+
+создание экземпляров
+вызывается функция construcor - new
+const firstcom=new Comment ('first comment')
+
+наследование по цепочке
+цепочка прототипов
+firstcom-->Comment-->Object
+
+проверка принадлежности классов
+instanceof-проверка на принадлежность
+
+const firstcom = new Comment("first comment");
+console.table(firstcom instanceof Comment);
+
+вызов метода
+
+class Comment {
+  constructor(text) {
+    this.text = text
+    this.votes = 0
+  }
+  upvote() {
+    this.votes += 1
+  }
+}
+const firstcom = new Comment()
+firstcom.upvote()
+console.log(firstcom.votes)
+
+методы можно вызывать много раз
+
+проверка принадлежности свойст экземпляру объекта
+firstcom.hasOwnProperty('text')-true
+firstcom.hasOwnProperty('upvote')-false
+
+создание нескольких экземпляров
+разные объекты с разными свойствами 
+const firstcom = new Comment("first comment")
+const 2com = new Comment("no comment")
+const 3com = new Comment("new comment")
+
+статические метод
+
+class Comment {
+    con() {
+      this.text = text;
+      this.vote = 1;
+    }
+    upvote(){
+      this.vote+=1;
+    }
+    static mer(first,second){
+        return `${first} ${second}`
+    }
+  }
+
+Расширение других классов
+
+class Num extends Array{
+    sum(){
+        return this.reduce((el,acc)=>acc+=el,0)
+    }
+}
+const me=new Num (2,3,7)
+me.sum()
+console.log(me)
+
+Прототип
+
+строки и числа ведут себя как объекты 
+
+Промисы
+позволяют обработать отложенные во времени события
+промис-это обещание предоставить результат позже
+может вернуть ошибку если результат предоставить невозможно
+
+Состояние промиса
+
+1.ожидание 
+
+2.исполнен
+
+3.отклонен
+
+Создание промиса
+const jdi=new Promise((resolve, reject)=>{
+выполнение 
+внутри этой функции нужно в результате вызвать одну из функций resolve или reject
+
+
+Получение результатов промиса
+jdi
+.then((value)=>{
+действие в случае успешного исполнения Промиса (value значение-resolve)
+})
+.catch((error)=>{
+действие в случае отклонения Промиса(error значение-reject)
+})
+
+fetch
+});
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then((response) =>{
+    console.log(response)
+    return response.json()
+
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) =>{
+    console.log(response)
+    return response.json()
+  })
+  .then((json) => console.log(json))
+  .catch((error)=>console.error(error))
+  })
+
+const Data=(https)=>
+new Promise((res,rej)=>
+fetch(https)
+.then(response=>response.json())
+.then(json=>res(json))
+.catch(error=>rej(error))
+)
+Data('https://jsonplaceholder.typicode.com/posts/1')
+.then(gotovo=>console.log(gotovo))
+.catch(obosrish=>console.log(obosrish))
+
+
+ASYNC/AWAIT
+ASYNC/AWAIT-специальный синтаксис для упрощения работы с промисами
+
+async function asy(){
+всегда возвращает промис
+}
+const asy= async()=>{
+всегда возвращает промис
+}
+
+
+const asy=async()=>{
+    return'govno'
+}
+asy()
+.then(gotovo=>console.log(gotovo))
+
+const asy=async()=>{
+   throw new Error('oshibka')
+}
+asy()
+.then(gotovo=>console.log(gotovo))
+.catch(error=>console.log(error))
+
+
+
+
+AWAIT
+
+const asy=async()=>{
+   await
+}
+asy()
+
+const timer=()=>
+new Promise((gotovo,negotovo)=>
+setTimeout(()=>gotovo(),2000))
+const asy= async()=>{
+    console.log('start')
+    await timer()
+    console.log('end')
+}
+asy()
+
+perfomance.now()-отслеживает время
+
+главное в ASYNC/AWAIT
+1.ASYNC/AWAIT - это синтаксическая настройка над промисами
+2.AWAIT синтаксис возможен только внутри ASYNC функций
+3.ASYNC функция всегда возвращает Promyse
+4.ASYNC функция ожидает результата инструкции AWAIT и не выполняет последущие инструкции

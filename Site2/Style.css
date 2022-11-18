@@ -1,0 +1,223 @@
+.main{
+    background-color: rgba(0, 0, 0, 0.763);
+}
+.box1:hover{
+   transition: 800ms; 
+   background-color: black;
+}
+#side.active{
+    left: 30px
+  }
+  #side{
+    display: flex;
+    border-radius: 3%;
+    margin-top: 40px;
+    width: 265px; 
+    height: 80px;
+    position: fixed;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    background-color: rgba(104, 104, 104, 0.834);
+    left: -265px;
+    transition:all 500ms;
+    overflow: hidden;
+  }
+ .profl{
+    height: 700px;
+    background-color: rgba(39, 39, 39, 0.759);
+    width: 1120px;
+ }
+  
+  .knopka{
+    left: 220px;
+   
+    display: flex;
+    background-color: aliceblue;
+  }
+  #box1:hover{
+    transition: 300ms;
+    background-color:#ffffff ;
+  }
+  #box1 {
+   margin-top: 20px;
+    display: flex;
+    width: 40px;
+    border: white;
+    padding: 3px;
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+    background-color: #000000;
+    box-decoration-break: clone;
+    height: 40px;
+    border-radius:30% ;
+    position: absolute;
+    position: fixed;
+    }
+    .menu{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        color: aliceblue;
+        align-items: center;
+        font-family: tahoma;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .menu:active{
+        text-decoration: none;
+    }
+    .round{
+        padding-top: 3px;
+        padding-left: 5px;
+        align-items: center;
+        border-radius: 50%;
+        margin-top: 30px;
+        background-color: rgb(127, 209, 3);
+        width: 41px;
+        height: 41px;
+        display: flex;
+      padding: auto;
+        margin-left: 10px;
+        border-style:solid;
+        outline-width: 10px;
+        
+    }
+    .round:hover{
+        box-shadow: 0 0 10px rgba(255,255, 255, 0.5);
+        transition: all 600ms;
+        background-color: rgb(0, 255, 30);
+        margin-top: 20px;
+    }
+    .ico{
+        height: 25px;
+        width: 25px;
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+    .menuico{
+        height: 41px;
+        width: 41px;
+        color:aliceblue;
+        margin-top: -3px;
+        margin-left: 1px;
+    } 
+    .menuico:hover{
+        transition:300ms ;
+        color: #000000;
+    }
+    .fon{
+        background-image: url(AqfnZmOSOyI.jpg);
+        background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+    }
+    .text{
+        color: aliceblue;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    }
+    .imghome{
+        width: 200px;
+        height: 200px;
+        border-radius: 43%;
+        background-color: black;
+        padding: 2px;
+        box-shadow:0 0 5px rgba(255, 255, 255, 0.1);
+        display: flex;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-bottom: 15px;
+        align-items: baseline;
+    }
+      .imghome:hover{
+        width: 210px;
+        height: 210px ;
+
+      }
+      .text1{
+        position: absolute;
+        display:flex;
+        color: aliceblue;
+        margin-top: 50px;
+        margin-left: 250px;
+        font-size: 18px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    }
+    @media screen and (max-width: 980px) {
+        .text1{
+            position: absolute;
+            display:flex;
+            color: aliceblue;
+            margin-top: 30px;
+            margin-left: 150px;
+            font-size: 12px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+        }
+
+        .imghome {
+            width: 120px;
+            height: 120px;
+        }
+        .imghome:hover{
+            width: 130px;
+            height: 130px ;
+    
+          }
+    } 
+    @media screen  and (max-width:600px) {
+        .text1{
+            position: absolute;
+            display:flex;
+            color: aliceblue;
+            margin-top: 15px;
+           margin-left:  90px;
+            font-size: 8px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+        }
+        .imghome {
+            width: 70px;
+            height: 70px;
+        }
+        .imghome:hover{
+            width: 80px;
+            height: 80px ;
+        }
+        .text{
+            color: aliceblue;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+            font-size: 14px;
+        }
+          }
+          .dis{
+            display: table;
+          }
+          .gosom{
+            width: 225px;
+            height: 400px;
+            margin-left: 899px;
+            margin-top: 30px;
+            display: flex;
+            position: absolute;
+            background-color:rgba(40, 40, 40, 0.623) ;
+            -webkit-transition: 300ms;
+          }
+          .cardtxt{
+            color: aliceblue;
+
+          }
+          .cardbutt{
+            background-color: rgb(20, 20, 20);
+          }
+          .cardbutt:hover{
+            color: aliceblue;
+          }
+          .gosom:hover{
+            width: 229px;
+            height: 405px;
+            transition: 200ms;
+          }
+        
+
+    
